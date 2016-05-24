@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <locale.h>
-//sesliharfleri '*' a çevirir
+//sesliharfleri '*' a Ã§evirir
 void vowel_to_star(const char *);
 
 int main(int argc, char *argv[])
 {
-  setlocale(LC_ALL,"Turkish"); //klavye dilini türkçeye ayarlama
-  char mystring[] = "Taha Yasir Kýroðlu";
+  setlocale(LC_ALL,"Turkish"); //klavye dilini tÃ¼rkÃ§eye ayarlama
+  char mystring[] = "Taha Yasir KÃ½roÃ°lu";
       vowel_to_star(mystring);
       puts(mystring);
   return 0;
@@ -21,12 +21,12 @@ void vowel_to_star(const char *pChr)
        { 
          case 'a': case 'A':
          case 'e': case 'E':
-         case 'ý': case 'I':
-         case 'i': case 'Ý':
+         case 'Ä±': case 'I':
+         case 'i': case 'Ä°':
          case 'o': case 'O':
-         case 'ö': case 'Ö':
+         case 'Ã¶': case 'Ã–':
          case 'u': case 'U':
-         case 'ü': case 'Ü':
+         case 'Ã¼': case 'Ãœ':
              *chr='*';
              break;
         }
