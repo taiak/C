@@ -6,7 +6,7 @@ void vowel_to_star(const char *);
 int main(int argc, char *argv[])
 {
   setlocale(LC_ALL,"Turkish"); //klavye dilini türkçeye ayarlama
-  char mystring[] = "Taha Yasir Kýroðlu";
+  char mystring[] = "Taha Yasir Kiroglu";
       vowel_to_star(mystring);
       puts(mystring);
   return 0;
