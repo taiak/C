@@ -1,18 +1,16 @@
 #include "stdio.h"
 
-void strCat(const char *hedef ,char *kaynak)
+void strCat(char *hedef ,char *kaynak)
 {
-	char * pH  ;
-    for ( pH = hedef ; (*pH) != '\0'; pH++);//p eofu bulana kadar dönsün
+    for (  ; (*hedef) != '\0'; hedef++);//p eofu bulana kadar donsun
 
-	for( ; (* pH = * kaynak) != '\0' ; kaynak++, pH++);//kaynak'ın değerini pH'e ata
-	//eğer ph eof a eşit değilse ph ve kaynak adreslerinibir arttır    
+	  for( ; (* hedef = * kaynak) != '\0' ; kaynak++, hedef++);//kaynak'gin degerini pH'e ata
 }
 int main(void)
 {
     char hedef[]={"19Mayis"}, kaynak[]={"Univertesi"};
     strCat(hedef,kaynak);
     printf("%s",hedef);
-    
+
 	return 0;
 }

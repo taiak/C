@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void strCpy(char * , char * );
+void strCpy(char * ,const char * );
 
 int main()
 {
@@ -11,7 +11,7 @@ int main()
    return 0;
 }
 
-void strCpy(char * hedef, char * kaynak)
+void strCpy(char * hedef,const char * kaynak)
 {
    for ( ; (*hedef = *kaynak) != '\0' ; kaynak++ , hedef++ );
 }

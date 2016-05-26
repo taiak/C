@@ -9,9 +9,9 @@ int main()
 
     return 0;
 }
-int strLen(const char *p ) {
+int strLen(const char *pStr ) {
     int i;
-    for(i=0; (*p) != 0 ;i++)
-        p++;
+    for(i=0 ; (*pStr) != '\0' ; i++)
+        pStr++;
     return i;
 }

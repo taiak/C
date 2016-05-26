@@ -5,8 +5,7 @@ void vowel_to_star(const char *);
 
 int main(int argc, char *argv[])
 {
-  setlocale(LC_ALL,"Turkish"); //klavye dilini türkçeye ayarlama
-  char mystring[] = "Taha Yasir Kýroðlu";
+  char mystring[] = "Cevat Þakir KABAAÐAÇ";
       vowel_to_star(mystring);
       puts(mystring);
   return 0;
@@ -14,6 +13,7 @@ int main(int argc, char *argv[])
 
 void vowel_to_star(const char *pChr)
 {
+	setlocale(LC_ALL,"Turkish");//klavye dili türkçe olsun
 	char *chr=pChr;
      for( ; *chr ; chr++ ) 
      {
@@ -28,7 +28,6 @@ void vowel_to_star(const char *pChr)
          case 'u': case 'U':
          case 'ü': case 'Ü':
              *chr='*';
-             break;
         }
      }
 }
