@@ -11,7 +11,7 @@ int main()
 }
 int strLen(const char *pStr ) {
     int i;
-    for(i=0 ; (*pStr) != '\0' ; i++)
+    for( i = 0 ; ( * pStr ) != '\0' ; i++)
         pStr++;
     return i;
 }

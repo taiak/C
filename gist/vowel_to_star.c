@@ -1,20 +1,19 @@
 #include <stdio.h>
 #include <locale.h>
 //sesliharfleri '*' a çevirir
-void vowel_to_star(const char *);
+void vowel_to_star(char *);
 
 int main(int argc, char *argv[])
 {
   char mystring[] = "Cevat Þakir KABAAÐAÇ";
-      vowel_to_star(mystring);
-      puts(mystring);
+      vowel_to_star( mystring );
+      puts( mystring );
   return 0;
 }
 
-void vowel_to_star(const char *pChr)
+void vowel_to_star( char *chr )
 {
 	setlocale(LC_ALL,"Turkish");//klavye dili türkçe olsun
-	char *chr=pChr;
      for( ; *chr ; chr++ ) 
      {
        switch( *chr )
@@ -27,7 +26,7 @@ void vowel_to_star(const char *pChr)
          case 'ö': case 'Ö':
          case 'u': case 'U':
          case 'ü': case 'Ü':
-             *chr='*';
+             *chr = '*';//sesli bir harfse * yap
         }
      }
 }
