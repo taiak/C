@@ -1,5 +1,5 @@
 #include <stdio.h>
-//olasý strlen fonksiyonu
+//olasi strlen fonksiyonu
 int strLen(const char *);
 int main()
 {
