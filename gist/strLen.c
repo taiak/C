@@ -15,3 +15,4 @@ int strLen(const char *p ) {
         p++;
     return i;
 }
+.
