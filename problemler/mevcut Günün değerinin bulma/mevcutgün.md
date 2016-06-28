@@ -1,2 +1,2 @@
 **Soru**:
-İçerisinde bulunduğunuz yıldaki geçen gün sayısını bulan programı yazınız.
+İçerisinde bulunduğunuz yıldaki geçen gün sayısını girdisiz bulan programı yazınız.
