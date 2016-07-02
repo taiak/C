@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include <stdlib.h> // atof için
-#include <ctype.h> // Ýsdigit icin
-//geliþtirilmesi lazým
+#include <stdlib.h> // atof iÃ§in
+#include <ctype.h> // isdigit icin
+//geliÅŸtirilmesi lazim
 float float_al(void);
 int main()
 {
