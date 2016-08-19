@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <string.h>
-//verilen stringi son karakterine kadar çevirerek basar
+#include <string.h> //strlen icin
+//verilen stringi son karakterine kadar cevirerek basar
 void tekrarlat(const char*);
 int main(){
     char yasir[] = "This is a fallOO midterm question. ";
@@ -8,10 +8,9 @@ int main(){
     return 0;
 }
 void tekrarlat(const char* str) {
-   int boy=strlen( str )-1;
+   int boy = strlen( str )-1;
    int i;
-   for(i=0 ; boy > i ; i++)
-   {
+   for(i=0 ; boy > i ; i++){
    	 int j;
    	 for(j = i ; j < boy ; j++ )
    	    putchar(*(str+j));	

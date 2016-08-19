@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(){
-	kareYap(12,5);
+	kareYap(12);
 }
 
 int kareYap( unsigned int n ){
