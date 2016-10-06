@@ -1,5 +1,5 @@
-#include <stdio.h>
-//olasi strlen fonksiyonu
+#include <stdio.h> //printf icin
+// Verilen stringin uzunlugunu döner
 int strLen(const char *);
 int main()
 {

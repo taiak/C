@@ -1,1 +1,1 @@
-**soru: konsol boyutuu ayarlayan C kodunu yazınız.**
+**soru: konsol boyutunu ayarlayan C kodunu yazınız.**

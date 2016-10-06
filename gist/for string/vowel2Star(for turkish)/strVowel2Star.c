@@ -1,19 +1,8 @@
 #include <stdio.h>
-#include <locale.h>
+#include <locale.h> //setlocale dil ayarlamak icin
 
-//sesliharfleri '*' a cevirir
-void vowel_to_star(char *);
-
-int main( int argc, char *argv[] ){
-	setlocale( LC_ALL,"Turkish" ); //klavye dilini turkceye ayarlama
-	char mystring[] = "Taha Yasir Kýroðlu";
-	  strVowel2Star( mystring );
-	  puts( mystring );
-	return 0;
-}
-
+//turkce icin sesliharfleri '*' a cevirir
 void strVowel2Star( char *chr ){
-	//setlocale(LC_ALL,"Turkish");//klavye dilini turkceye ayarla
      for( ; *chr ; chr++ ) {
        switch( *chr ){
          case 'a': case 'A':
@@ -28,4 +17,11 @@ void strVowel2Star( char *chr ){
              break;
         }
      }
+}
+int main( int argc, char *argv[] ){
+	setlocale( LC_ALL,"Turkish" ); //klavye dilini turkceye ayarla
+	char mystring[] = "Taha Yasir Kýroðlu";
+	  strVowel2Star( mystring );
+	  puts( mystring );
+	return 0;
 }

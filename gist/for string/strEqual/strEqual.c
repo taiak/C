@@ -1,5 +1,5 @@
 #include <stdio.h>
-int strlen(const char *);
+int strLen(const char *); //string kutuphanesini dahil etmemek icin
 int strEqual(const char* ,const char *,int ,int);
 /********************************************************************/
 /*  strEqual() iki dizgileri karsilastirir. Eger esitlerse 0 doner  */

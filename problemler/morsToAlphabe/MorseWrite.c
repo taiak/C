@@ -4,14 +4,10 @@
 char karakter_kontrol( int * );
 int mors_et( void );
 
-int main(int argc, char* argv[])
-{
-   mors_et(); 
-   return 0;   
-} 
+
 int mors_et( void )
 {
-    int c;
+    int c, c_eski;
     char alfabe[][7] = { "-.-.--", "...-..-", ".-...", ".----."
                     ,"-.--.", "-.--.-", ".-.-.", "--..--" 
                     ,"-....-", ".-.-.-", "-..-.", "-----" 
@@ -29,20 +25,23 @@ int mors_et( void )
       c = karakter_kontrol(&c);
       if( c == 'e' ) //eof ise bitir
           break;
-      else if( c == 'b' )//boþluk karakteriyse ' / ' bas
-          printf(" / ");
-      else if( c== 'n' )
+      else if( c == 'b' ){// bosluk karakteriyse ' / ' bas
+          if( c_eski != ' ' ) 
+              printf(" / ");
+      }
+      else if( c == 'n' )
           putchar('\n');
-      else if( c == 'g' ) //geçersizse deam et
+      else if( c == 'g' ) //gecersiz karakterse devam et
           continue;
       else
           printf("%s ", alfabe[ c ] );
+      c_eski = c;
     }
      putchar('\n'); //terminal kullanýcýlarý için
    return 0;
 }
-//karakterin deðerini kontol eder ve dizideki deðerini döndürür
-//eof ise 'e', boþluk ise 'b', geçersiz ise 'g' deðerlerini döndürür. 
+//karakterin degerini kontol eder ve dizideki degerini dondurur
+//eof ise 'e', bosluk ise 'b', gecersiz ise 'g' degerlerini dondurur. 
 char karakter_kontrol( int* chr ){
       char harf;
       if( *chr == '\n' )
@@ -57,7 +56,7 @@ char karakter_kontrol( int* chr ){
           harf = *chr-37;
       else
       {
-          switch(*chr)//ustteki kurallara uymayanlar
+          switch(*chr)// ustteki kurallara uymayanlar
           {
             case '!':  harf = 0;   break;
             case '$':  harf = 1;   break;
@@ -66,8 +65,13 @@ char karakter_kontrol( int* chr ){
             case '(':  harf = 4;   break;
             case ')':  harf = 5;   break;
             case '=':  harf = 23;  break;
-            default:   harf = 'g'; //Geçerli harflerden deðillerse devam ettir
+            default:   harf = 'g'; //Gecerli harflerden degillerse devam ettir
           }
       }        
    return harf;
 }
+int main(int argc, char* argv[])
+{
+   mors_et(); 
+   return 0;   
+} 
