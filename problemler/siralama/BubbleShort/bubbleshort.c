@@ -11,11 +11,11 @@ int bubble(int * baslangic, int boyut){
 				*(pDizi+1) = tmp;
 			}
 			pDizi++;
-    }
+		}
 		return bubble(baslangic, boyut );
 	}
-  else
-	  return 0;
+	else
+		return 0;
 }
 int main(){
 	int dizi[]={ 36,97,56,77,68,21,83,87,4,61,27};
