@@ -1,9 +1,36 @@
 #include <stdio.h>
 #include <ctype.h>
 #define al(c) c=getchar()
-char karakter_kontrol( int * );
-int mors_et( void );
-
+//karakterin degerini kontol eder ve dizideki degerini dondurur
+//eof ise 'e', bosluk ise 'b', gecersiz ise 'g' degerlerini dondurur. 
+char karakter_kontrol( int* chr ){
+      char harf;
+      if( *chr == '\n' )
+          harf = 'n';
+      else if( isspace( *chr ))
+          harf = 'b';
+      else if( *chr == EOF )
+          harf = 'e';
+      else if(( '>' < *chr ) && ( *chr < '[' ))
+          harf = *chr-39;
+      else if(( '*' < *chr ) && ( *chr < '<' ))
+          harf = *chr-37;
+      else
+      {
+          switch(*chr)// ustteki kurallara uymayanlar
+          {
+            case '!':  harf = 0;   break;
+            case '$':  harf = 1;   break;
+            case '&':  harf = 2;   break;
+            case '"':  harf = 3;   break;
+            case '(':  harf = 4;   break;
+            case ')':  harf = 5;   break;
+            case '=':  harf = 23;  break;
+            default:   harf = 'g'; //Gecerli harflerden degillerse devam ettir
+          }
+      }        
+   return harf;
+}
 
 int mors_et( void )
 {
@@ -37,38 +64,8 @@ int mors_et( void )
           printf("%s ", alfabe[ c ] );
       c_eski = c;
     }
-     putchar('\n'); //terminal kullanýcýlarý için
+     putchar('\n'); //terminal kullanÄ±cÄ±larÄ± iÃ§in
    return 0;
-}
-//karakterin degerini kontol eder ve dizideki degerini dondurur
-//eof ise 'e', bosluk ise 'b', gecersiz ise 'g' degerlerini dondurur. 
-char karakter_kontrol( int* chr ){
-      char harf;
-      if( *chr == '\n' )
-          harf = 'n';
-      else if( isspace( *chr ))
-          harf = 'b';
-      else if( *chr == EOF )
-          harf = 'e';
-      else if(( '>' < *chr ) && ( *chr < '[' ))
-          harf = *chr-39;
-      else if(( '*' < *chr ) && ( *chr < '<' ))
-          harf = *chr-37;
-      else
-      {
-          switch(*chr)// ustteki kurallara uymayanlar
-          {
-            case '!':  harf = 0;   break;
-            case '$':  harf = 1;   break;
-            case '&':  harf = 2;   break;
-            case '"':  harf = 3;   break;
-            case '(':  harf = 4;   break;
-            case ')':  harf = 5;   break;
-            case '=':  harf = 23;  break;
-            default:   harf = 'g'; //Gecerli harflerden degillerse devam ettir
-          }
-      }        
-   return harf;
 }
 int main(int argc, char* argv[])
 {
