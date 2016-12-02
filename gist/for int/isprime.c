@@ -1,11 +1,18 @@
 #include <stdio.h>
-// tek asal cift sayi 2 oldugu icin 2 ser arttirabiliriz.
-// bu, programı yaklasik %50 daha hızlı calistirir
+#include <math.h>/*sqrt icin*/
 int isprime(int sayi){
-	int i;
-	for(i = 2 ; i <= sayi/2 ; i = i+2)
-        if(sayi%i == 0)// asallik sarti
-            return 1;
-  return 0;
+	int i, asal;
+	asal = (sayi%2)?0:1;
+	asal = (sayi == 2)?1:0;
+	for(i = 3 ; i <= sqrt((double)sayi) && asal ; i = i+2)
+        	if(sayi%i == 0)// asallik sarti
+			asal = 0;
+	return asal;
 }
-// asalsa 0 degilse 1 doner
+int main(){
+	if(isprime(58))
+		printf("asal\n");
+	else
+		printf("asal degil\n");
+	return 0;
+}
