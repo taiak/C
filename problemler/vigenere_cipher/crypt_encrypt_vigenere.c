@@ -14,7 +14,7 @@ int encrypt(int chr1, int chr2){
 	if(isalpha (chr1) && isalpha (chr2)){ /*if chr1 and chr2 alpha*/
 		chr1 = toupper (chr1);
 		chr2 = toupper (chr2);
-		sum = ( (chr1 + chr2 - 129) % 26) + 64;
+		sum = ( (chr1 + chr2 - 130) % 26) + 65;
 	} else 
 		sum = ' '; /* if chr 1 and chr2 not alpha make it space*/
 	return sum;
@@ -26,7 +26,7 @@ int decrypt(int crypt, int cipher){
 	if(isalpha (crypt) && isalpha (cipher)){
 		crypt = toupper (crypt);
 		cipher = toupper (cipher);
-		sum = ( (27 + crypt - cipher ) % 26) + 64;
+		sum = ( (26 + crypt - cipher ) % 26) + 65;
 	} else 
 		sum = ' '; /* if chr 1 and chr2 not alpha make it space*/
 	return sum;
